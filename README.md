@@ -5,8 +5,8 @@ Using Stylus/Rupture and Pug instead of CSS and HTML.
    http://stylus-lang.com/
    https://github.com/jescalan/rupture
    https://github.com/pugjs/pug/
-   
-so far I have done 01-04 of chapter 7, click the "Projects" tab
+
+So far I have done 01-04 of chapter 7, click the "Projects" tab
 (the other tabs are from the webpack starter)
 
 ___ 
