@@ -6,7 +6,7 @@ form(
   label Emails
   button(type='button', (click)='addEmail()') Add Emails
   ul(formArrayName='emails')
-    li(*ngFor="let e of formModel.get('emails').controls; let i=index")
+    li(*ngFor="let e of getEmailControls(); let i=index")
       input([formControlName]='i')
   button(type='submit') Submit
 hr

@@ -43,8 +43,9 @@ export class DUserFormComponent implements OnInit {
         this.title = param['name'] + ': ' + this.title;
     });
   }
-  private onSubmit() {
+  public onSubmit() {
     console.log(this.formModel.value);
     this.appState.set('value', this.formModel.value);
   }
 }
+// Property 'controls' does not exist on type 'AbstractControl'.

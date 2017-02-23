@@ -13,8 +13,8 @@ import { ActivatedRoute } from '@angular/router';
     styleUrls: [ 'dform.component.styl' ]
 })
 export class DFormComponent implements OnInit {
-  public title: string = 'Dynamically Add Emails';
-  private formModel: FormGroup = new FormGroup({
+  public title: string = 'Dynamially Add Emails';
+  public formModel: FormGroup = new FormGroup({
     emails: new FormArray([ new FormControl() ])
   });
   constructor(public route: ActivatedRoute, public appState: AppState, public gtitle: Title ) { }
@@ -24,15 +24,20 @@ export class DFormComponent implements OnInit {
          this.title = param['name'] + ': ' + this.title;
     });
   }
-  private addEmail(): void {
+  public addEmail(): void {
     const emails = this.formModel.get('emails') as FormArray;
     emails.push(new FormControl());
   }
-  private onSubmit(): void {
+  public getEmailControls(): FormControl[] {
+     // let fa: FormArray = this.formModel.get('emails') as FormArray;
+     // let fac: FormControl[] = fa.controls as FormControl[];
+     return (this.formModel.get('emails') as FormArray).controls as FormControl[];
+  }
+  public onSubmit(): void { 
     console.log(this.formModel.value);
     this.appState.set('value', this.formModel.value);
   }
-  private get value(): string {
+  public get value(): string {
     return JSON.stringify( this.formModel.value, null , 4 );
   }
 }
