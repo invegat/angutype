@@ -1,0 +1,14 @@
+h1(x-large) {{ title }}
+form(
+    [formGroup]='formModel',
+    (ngSubmit)='onSubmit()'
+)
+  label Emails
+  button(type='button', (click)='addEmail()') Add Emails
+  ul(formArrayName='emails')
+    li(*ngFor="let e of formModel.get('emails').controls; let i=index")
+      input([formControlName]='i')
+  button(type='submit') Submit
+hr
+label Form Value:
+pre {{ value  }}

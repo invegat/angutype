@@ -1,0 +1,14 @@
+h1(x-large) {{ title  }}
+form(#f='ngForm',name='testForm', (ngSubmit)='submitState(f.value)',autocomplete='off')
+  div Username:
+    input(type="text", 'required pattern'="[a-zA-Z0-9]+", ngModel, name='username', placeholder='User Name')
+  div SSN: 
+    input(type="text", ngModel, name='ssn')
+  div(ngModelGroup='passwordsGroup') 
+    div Password:
+      input(type="password", ngModel, name='password')
+    div Confirm password:
+      input(type="password", ngModel, name='pconfirm')
+  pre this.localState = {{ f.value | json }}
+  button(type="submit") Submit
+  hr

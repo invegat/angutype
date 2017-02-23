@@ -1,0 +1,12 @@
+h1(x-large) {{ title }}
+form([formGroup]='formModel', (ngSubmit)='onSubmit()')
+  div Username:
+    input(type='text',formControlName='username')
+  div SSN:
+    input(type='text', formControlName='ssn')
+  div(formGroupName='passwordsGroup')
+    div Password:
+      input(type='password',formControlName='password')
+    div Confirm password:
+      input(type='password', formControlName='pconfirm')
+  button(type='submit') Submit

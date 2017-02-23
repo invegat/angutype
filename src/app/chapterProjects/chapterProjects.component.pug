@@ -1,0 +1,8 @@
+br
+br
+br
+hr
+div(class="chapterProjects") Projects Tree
+Tree(#tree,[nodes]="nodes",[options]="coptions")
+  template(#treeNodeTemplate, let-node="node", let-index="index")
+    button((click)="go(node)",class="node.getClass()") {{ node.data.name }}
