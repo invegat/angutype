@@ -8,6 +8,7 @@ Using Stylus/Rupture and Pug instead of CSS and HTML.
 so far I have done 01-04 of chapter 7, click the "Projects" tab
 (the other tabs are from the webpack starter)
 </p>
+___ 
 
 # clone 
 git clone https://github.com/invegat/angutype
@@ -24,7 +25,7 @@ npm start
 # use Hot Module Replacement
 npm run server:dev:hmr
 
-AOT issues with Forms <a href=https://github.com/angular/angular/issues/11709/>
+AOT issues with Forms https://github.com/angular/angular/issues/11709/
 and also private fields and procedures means no "build:aot" for now.  This version
 is configured for Stylus and Pug to work with "build:aot"
 
