@@ -20,7 +20,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const ngcWebpack = require('ngc-webpack');
-const WebpackBrowserPlugin = require('webpack-browser-plugin');
 
 /*
  * Webpack Constants
@@ -212,11 +211,6 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
     plugins: [
-      new WebpackBrowserPlugin({
-       browser: 'c:\Program Files (x86)\dartium-win-ia32-stable-1.22.1.0\chrome.exe',
-       port: 3001,
-       url: 'http://localhost'
-      }),  
 
       new AssetsPlugin({
         path: helpers.root('dist'),
