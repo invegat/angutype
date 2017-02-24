@@ -33,7 +33,7 @@ export class DFormComponent implements OnInit {
      // let fac: FormControl[] = fa.controls as FormControl[];
      return (this.formModel.get('emails') as FormArray).controls as FormControl[];
   }
-  public onSubmit(): void { 
+  public onSubmit(): void {
     console.log(this.formModel.value);
     this.appState.set('value', this.formModel.value);
   }

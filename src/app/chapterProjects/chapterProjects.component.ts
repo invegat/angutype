@@ -27,7 +27,9 @@ export class ChapterProjectsComponent implements OnInit {
                 { id: 701, name: '01_template-driven' },
                 { id: 702, name: '02_growable-items-form' },
                 { id: 703, name: '03_reactive' },
-                { id: 704, name: '04_form-builder' }
+                { id: 704, name: '04_form-builder' },
+                { id: 705, name: '05_custom-validator' },
+                { id: 706, name: '06_custom-validator-directive' }
             ]
         }
     ];

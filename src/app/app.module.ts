@@ -31,10 +31,13 @@ import { ChapterProjectsComponent  } from './chapterProjects';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
-import { TFormComponent  } from './AT/C7/S01/tform';
-import { DFormComponent  } from './AT/C7/S02/dform';
-import { DUserFormComponent  } from './AT/C7/S03-04/dUserForm';
+import { TFormComponent  } from './AT/C7/S01';
+import { DFormComponent  } from './AT/C7/S02';
+import { DUserFormComponent  } from './AT/C7/S03-04';
+import { SsnFormComponent  } from './AT/C7/S05';
+import { SsnValidatorDirective, SsnValidatorDirectiveComponent  } from './AT/C7/S06';
 import { Title } from './home/title';
+import { FormControl  } from '@angular/forms';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -66,7 +69,10 @@ type StoreType = {
     XLargeDirective,
     TFormComponent,
     DFormComponent,
-    DUserFormComponent
+    DUserFormComponent,
+    SsnFormComponent,
+    SsnValidatorDirective,
+    SsnValidatorDirectiveComponent
   ],
   imports: [ // import Angular's modules
     TreeModule,
