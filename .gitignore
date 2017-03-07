@@ -35,6 +35,8 @@ Thumbs.db
 /bower_components/
 npm-debug.log
 /npm-debug.log.*
+/src/app/AT/C8/http_websocket_samples/server/node_modules/
+/src/app/AT/C8/http_websocket_samples/server/npm-debug.log.*
 
 # Coverage #
 /coverage/
@@ -56,6 +58,7 @@ npm-debug.log
 .webpack.json
 /compiled/
 dll/
+/src/app/AT/C8/http_websocket_samples/server/build/
 
 # Doc #
 /doc/

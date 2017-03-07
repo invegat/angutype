@@ -1,0 +1,19 @@
+h1(x-large) {{ title }}
+form([formGroup]='formModel', (ngSubmit)='onSubmit()')
+    div Username:&nbsp;
+        input(type='text',formControlName='username')
+        span([hidden]="!formModel.hasError('required',['username'])").
+            &nbsp;Username is required
+    div SSN:&nbsp;
+        input(type='text', formControlName='ssn')
+        span([hidden]="!formModel.hasError('ssn',['ssn'])").
+            &nbsp;SSN is invalid
+    div(formGroupName='passwordsGroup')
+        div Password:&nbsp;
+            input(type='password',formControlName='password')
+            span([hidden]="!formModel.hasError('minlength', ['passwordsGroup', 'password'])") Password is too short
+        div Confirm password:&nbsp; 
+            input(type='password', formControlName='pconfirm')
+            span([hidden]="!formModel.hasError('equal',['passwordsGroup'])").
+                &nbsp;Passwords must be the same
+    button(type='submit') Submit

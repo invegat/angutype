@@ -29,7 +29,8 @@
   },
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "src/app/AT/C8/http_websocket_samples/server"
   ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,

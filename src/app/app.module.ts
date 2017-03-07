@@ -4,7 +4,8 @@ import { HttpModule } from '@angular/http';
 import { TreeModule } from 'angular2-tree-component';
 import {
   NgModule,
-  ApplicationRef
+  ApplicationRef,
+  CUSTOM_ELEMENTS_SCHEMA
 } from '@angular/core';
 import {
   removeNgStyles,
@@ -27,15 +28,10 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
-import { ChapterProjectsComponent  } from './chapterProjects';
+import { ChapterProjectsComponent  } from './AT/chapterProjects';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
-import { TFormComponent  } from './AT/C7/S01';
-import { DFormComponent  } from './AT/C7/S02';
-import { DUserFormComponent  } from './AT/C7/S03-04';
-import { SsnFormComponent  } from './AT/C7/S05';
-import { SsnValidatorDirective, SsnValidatorDirectiveComponent  } from './AT/C7/S06';
 import { Title } from './home/title';
 import { FormControl  } from '@angular/forms';
 
@@ -67,13 +63,21 @@ type StoreType = {
     ChapterProjectsComponent,
     NoContentComponent,
     XLargeDirective,
+    /*
     TFormComponent,
     DFormComponent,
     DUserFormComponent,
     SsnFormComponent,
     SsnValidatorDirective,
-    SsnValidatorDirectiveComponent
+    SsnValidatorDirectiveComponent,
+    SsnValidatorErrorMessageComponent,
+    AsyncSsnValidatorComponent,
+    ReactiveValidationComponent,
+    TemplateValidationComponent,
+    EqualValidatorDirective
+    */
   ],
+  schemas:     [CUSTOM_ELEMENTS_SCHEMA],
   imports: [ // import Angular's modules
     TreeModule,
     BrowserModule,

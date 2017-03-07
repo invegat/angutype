@@ -26,8 +26,10 @@
   "exclude": [
     "node_modules",
     "dist",
+    "src/app/AT/C8/http_websocket_samples/server",
     "src/**/*.spec.ts",
-    "src/**/*.e2e.ts"
+    "src/**/*.e2e.ts",
+    "test.ts"
   ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,

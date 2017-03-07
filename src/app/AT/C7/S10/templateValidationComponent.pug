@@ -1,0 +1,20 @@
+h1(x-large) {{ title  }}
+form(#f='ngForm',name='testForm', (ngSubmit)='onSubmit(f.value, f.valid)', novalidate)
+    div Username:
+        input(type="text", ngModel, required,  name='username')
+        span( [hidden]="!f.form.hasError('required',['username'])").
+            &nbsp;Username is required
+    div SSN: 
+        input(type="text", ngModel, ssn, name='ssn')
+        span( [hidden]="!f.form.hasError('ssn',['ssn'])").
+            &nbsp;SSN is invalid
+    div(ngModelGroup='passwordsGroup' equal) 
+        div Password:&nbsp;
+            input(type="password", name='password', ngModel, minlength='5')
+            span([hidden]="!f.hasError('minlength', ['passwordsGroup', 'password'])") &nbsp;Password is too short
+        div Confirm password:&nbsp;
+            input(type="password", ngModel, name='pconfirm')
+            span( [hidden]="!f.form.hasError('equal',['passwordsGroup'])").
+                &nbsp;Passwords must be the same
+    button(type="submit") Submit
+    hr

@@ -1,0 +1,5 @@
+h1(x-large) {{ title }}
+form([formGroup]='form') SSN&nbsp;
+    input(type='text', formControlName='my-ssn')
+    span([hidden]="!form.hasError('ssn',['my-ssn'])").
+        &nbsp;{{form.getError('ssn',['my-ssn'])?.description}}

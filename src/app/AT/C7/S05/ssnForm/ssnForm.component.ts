@@ -4,29 +4,27 @@ import { Title } from '../../../../home/title';
 import { XLargeDirective  } from '../../../../home/x-large';
 import { ActivatedRoute } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormControl, FormGroup } from '@angular/forms';
-
+function ssnValidator(control: FormControl): {[key: string]: any} {
+        const value: string = control.value || '';
+        const valid  = value.match(/^\d{9}$/);
+        return valid ? null : {ssn: true};
+}
 @Component({
   selector: 'ssnForm',
   templateUrl: 'ssnForm.component.pug'
 })
 export class SsnFormComponent implements OnInit {
-    private form: FormGroup;
-    private title: string = 'SSN Validation';
+    public form: FormGroup;
+    public title: string = 'SSN Validation';
     constructor(public route: ActivatedRoute, public appState: AppState,
                 public gtitle: Title ) {
         this.form = new FormGroup({
-            'my-ssn': new FormControl('', this.ssnValidator)
+            'my-ssn': new FormControl('', ssnValidator)
         });
     }
     public ngOnInit() {
-        this.route.params.subscribe((param) => {
+        this.route.queryParams.subscribe((param) => {
             this.title = param['name'] + ': ' + this.title;
         });
      }
-     private ssnValidator(control: FormControl): {[key: string]: any} {
-        const value: string = control.value || '';
-        const valid  = value.match(/^\d{9}$/);
-        return valid ? null : {ssn: true};
-    }
-
 }

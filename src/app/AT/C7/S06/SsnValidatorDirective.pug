@@ -1,6 +1,6 @@
 h1(x-large) {{ title }}
 form(#f='ngForm') SSN:&nbsp;
   input(type='text',name='my-ssn', ngModel, ssn)
-  span([hidden]="!f.form.hasError('ssn', 'my-ssn')").
+  span([hidden]="!f.form.hasError('ssn', ['my-ssn'])").
     &nbsp;SSN is invalid
   

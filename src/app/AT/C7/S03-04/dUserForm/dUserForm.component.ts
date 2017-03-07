@@ -18,7 +18,6 @@ export class DUserFormComponent implements OnInit {
               public gtitle: Title ) {
   }
   public ngOnInit() {
-    console.log('hello from `dUserForm` component');
     this.useFormBuilder = this.route.routeConfig.data[0]['useFormBuilder'];
     this.title = this.useFormBuilder ? 'User Form with Form Builder' : 'User Form with FormGroup';
     this.formModel = this.useFormBuilder ?
@@ -39,7 +38,7 @@ export class DUserFormComponent implements OnInit {
                 pconfirm: new FormControl()
            })
         });
-    this.route.params.subscribe((param) => {
+    this.route.queryParams.subscribe((param) => {
         this.title = param['name'] + ': ' + this.title;
     });
   }
