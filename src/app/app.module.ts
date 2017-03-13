@@ -28,12 +28,14 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
-import { ChapterProjectsComponent  } from './AT/chapterProjects';
+import { ChapterProjectsComponent } from './AT/chapterProjects';
 import { AboutComponent } from './about';
+// import { MarkdownComponent } from './markdown';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
 import { Title } from './home/title';
-import { FormControl  } from '@angular/forms';
+import { FormControl } from '@angular/forms';
+// import { MarkdownToHtmlModule  }  from 'ng2-markdown-to-html';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -55,7 +57,7 @@ type StoreType = {
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
 @NgModule({
-  bootstrap: [ AppComponent ],
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     AboutComponent,
@@ -63,28 +65,17 @@ type StoreType = {
     ChapterProjectsComponent,
     NoContentComponent,
     XLargeDirective,
-    /*
-    TFormComponent,
-    DFormComponent,
-    DUserFormComponent,
-    SsnFormComponent,
-    SsnValidatorDirective,
-    SsnValidatorDirectiveComponent,
-    SsnValidatorErrorMessageComponent,
-    AsyncSsnValidatorComponent,
-    ReactiveValidationComponent,
-    TemplateValidationComponent,
-    EqualValidatorDirective
-    */
+   // MarkdownComponent
   ],
-  schemas:     [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [ // import Angular's modules
     TreeModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: NoPreloading })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: NoPreloading }),
+    // MarkdownToHtmlModule
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
@@ -96,7 +87,7 @@ export class AppModule {
   constructor(
     public appRef: ApplicationRef,
     public appState: AppState
-  ) {}
+  ) { }
 
   public hmrOnInit(store: StoreType) {
     if (!store || !store.state) {
@@ -124,7 +115,7 @@ export class AppModule {
     // recreate root elements
     store.disposeOldHosts = createNewHosts(cmpLocation);
     // save input values
-    store.restoreInputValues  = createInputTransfer();
+    store.restoreInputValues = createInputTransfer();
     // remove styles
     removeNgStyles();
   }

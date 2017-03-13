@@ -13,6 +13,8 @@ import { DefaultValueAccessorComponent, CustomInputComponent } from './C7/S11';
 import { DFormComponentPlusRemoveComponent } from './C7/S12';
 import { ProductClientComponent } from './C8/http_websocket_samples/client';
 import { ProductClientAsyncComponent } from './C8/http_websocket_samples/asyncClient';
+import { MainFormComponent  } from './C8/http_websocket_samples/main-form';
+import { MainWithServiceComponent } from './C8/http_websocket_samples/main-with-service';
 // import { MarkdownToHtmlPipe } from 'markdown-to-html-pipe';
 import {
     RouterModule,
@@ -24,6 +26,7 @@ import {
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Injectable } from '@angular/core/index';
+// import { MarkdownToHtmlModule  }  from 'markdown-to-html-pipe'
 
 @Injectable()
 @NgModule({
@@ -32,6 +35,7 @@ import { Injectable } from '@angular/core/index';
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
+       // MarkdownToHtmlModule,
         RouterModule.forChild(ROUTES)
     ],
     declarations: [
@@ -51,6 +55,8 @@ import { Injectable } from '@angular/core/index';
         DFormComponentPlusRemoveComponent,
         ProductClientComponent,
         ProductClientAsyncComponent,
+        MainFormComponent,
+        MainWithServiceComponent
         // MarkdownToHtmlPipe
     ]
 })

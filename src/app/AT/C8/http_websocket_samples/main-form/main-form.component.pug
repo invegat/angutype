@@ -1,0 +1,7 @@
+h1(x-large) {{ title }}
+form(#f='ngForm', (ngSubmit)='getProductByID(f.value)')
+  label(for='productID') Enter Product&nbsp;
+  input(id='productID', type='number', name = 'productID', ngModel)
+  button(type='submit') Find Product
+h4 {{productTitle}} {{productPrice}}
+hr

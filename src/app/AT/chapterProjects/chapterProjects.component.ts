@@ -44,6 +44,8 @@ export class ChapterProjectsComponent {
           children: [
                 { id: 801, name: 'client.main' },
                 { id: 802, name: 'client.async.main' },
+                { id: 803, name: 'main-form'},
+                { id: 804, name: 'main-form-with-service'}
           ]
         }
     ];
